@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/segoe-fonts@1.0.1/segoe-fonts.min.css");
+/* variables */
+:root {
+  --primary: rgb(250, 97, 77);
+  --secondary: gray;
+  --light: rgb(241, 241, 241);
+  --dark: #202020;
+  --black-50: #999999;
+
+  --zero: 0rem;
+  --one: 1rem;
+  --two: 2rem;
+  --three: 3rem;
+  --four: 4rem;
+  --five: 5rem;
+}
+
+/* custom class */
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.font-knewave {
+  font-family: "Knewave", cursive;
+}
+
+.text-black-50 {
+  color: var(--black-50);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-light {
+  color: var(--light);
+}
+
+.text-dark {
+  color: var(--dark);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-dark {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.mt-3 {
+  margin-top: var(--three);
+}
+
+.mt-2 {
+  margin-top: var(--two);
+}
+
+.mt-1 {
+  margin-top: var(--one);
+}
+
+.mb-3 {
+  margin-bottom: var(--three);
+}
+
+.mb-2 {
+  margin-bottom: var(--two);
+}
+
+.mb-1 {
+  margin-bottom: var(--one);
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.grid {
+  display: grid;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.btn-outline-dark {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--dark);
+    color: var(--dark);
+
+    transition: all 0.3s;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.btn-dark {
+    color: var(--light);
+    background-color: var(--dark);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--light);
+}
+
+ul li {
+  list-style-type: none;
+}
+
+header {
+  height: 100%;
+  padding-top: 10px;
+  color: var(--light);
+  background: linear-gradient(to bottom, #2980B9, #6DD5FA);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  position: relative;
+  z-index: 100;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.content div {
+  max-width: 700px;
+}
+
+h1 span,
+h2 span {
+  position: relative;
+  z-index: 10;
+}
+
+h1 span::after,
+h2 span::after {
+  content: "";
+
+  width: 100%;
+  height: 30%;
+  background-color: var(--primary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  z-index: -1;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.background img {
+  width: var(--w);
+  position: absolute;
+  top: var(--t);
+  left: var(--l);
+
+  animation-name: float;
+  animation-duration: var(--d);
+  animation-iteration-count: infinite;
+}
+
+/* nav-container */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav li {
+  padding: 0 10px;
+}
+
+.nav li a {
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+
+  transition: 0.5s;
+}
+
+.nav li a::after {
+  content: "";
+
+  width: 100%;
+  height: 20%;
+  background-color: var(--primary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  z-index: -1;
+
+  transition: 0.5s;
+}
+
+.nav li a:hover::after {
+  height: 100%;
+}
+
+.nav li a:hover {
+  color: var(--dark);
+}
+
+.icons a {
+  position: relative;
+  z-index: 100;
+  padding: 0 5px;
+}
+
+.icons a:hover i {
+  color: var(--primary);
+}
+
+i.bi {
+  font-size: 24px;
+  transition: 0.4s;
+}
+
+#menu {
+  display: none;
+}
+
+section#about {
+  background: linear-gradient(25deg, var(--primary) 40%, var(--light) 40%);
+}
+
+.about-grid {
+  grid-template-columns: auto auto;
+  gap: var(--gap, 2rem);
+}
+
+.profile {
+  width: 250px;
+  border-radius: 10px;
+  margin-left: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s;
+}
+
+.profile:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  transform: scale(1.02);
+}
+
+.skills-badge span {
+  display: inline-block;
+  margin: 10px 10px;
+  padding: 8px 10px;
+  background-color: var(--dark);
+  color: var(--light);
+  border-radius: 10px;
+}
+
+.line {
+  margin-top: 50px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.project-grid {
+  grid-template-columns: auto auto;
+  gap: var(--gap, 2rem);
+}
+
+.project-img {
+  width: 400px;
+  margin-left: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s;
+}
+
+.project-img:hover {
+    transform: scale(1.02);
+}
+
+.goup {
+  color: var(--dark);
+  background-color: #6DD5FA;
+  padding: 10px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+
+  z-index: 1000;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.4s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------- */
+/* ANIMATIONS     */
+/* -------------- */
+@keyframes float {
+  from {
+    top: var(--t);
+    left: -5%;
+    /* transform: translateX(-10%);
+        transform: translateY(var(--t)); */
+  }
+
+  to {
+    top: var(--t);
+    left: 105%;
+    /* transform: translateX(110%);
+        transform: translateY(var(--t)); */
+  }
+}
+
+/* media queries */
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 98%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .nav {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transition: 0.3s;
+
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .active {
+    left: 0;
+  }
+
+  #menu {
+    display: inline;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .about-grid {
+    grid-template-columns: auto;
+    gap: var(--gap, 2rem);
+  }
+
+  .project-grid {
+    grid-template-columns: auto;
+    gap: var(--gap, 2rem);
+  }
+
+  .profile,
+  .project-img {
+    width: 100%;
+    margin: auto;
+  }
+}
